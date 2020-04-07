@@ -45,6 +45,10 @@ server.get('/api/users/:id',(req,res) => {
     res.status(200).json({user})
 })
 
+server.delete('/api/users/:id', (req,res) => {
+    console.log(req.params.id)
+    res.status(202).send(`deleted ${req.params.id}`)
+})
 
 // PORT ~ this setups a dynamic port and defaults to 5000 if none is set
 const port = process.env.PORT || 5000
